@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :albums
+  resources :groups
   devise_for :users, controllers: {
     sessions: 'user/sessions',
     registrations: 'user/registrations',
@@ -12,7 +14,7 @@ Rails.application.routes.draw do
     :sign_out => 'logout'
   }
 
-  # root :to => redirect("/login")
+  root :to => "home#show"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

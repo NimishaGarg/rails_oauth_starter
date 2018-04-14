@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
       :recoverable, :rememberable, :trackable, :validatable,
-      :omniauthable, :omniauth_providers => [:facebook,:microsoft_office365]
+      :omniauthable, :omniauth_providers => [:facebook,:microsoft_office365,:google_oauth2]
 
   def self.from_omniauth(auth)
     if user = User.find_by_email(auth.info.email)
